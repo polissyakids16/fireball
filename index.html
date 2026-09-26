@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+    <base target="_self">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Дитяча футбольна школа «FireBall» — Розвиток юних футболістів</title>
+
+    <meta name="description" content="Дитяча футбольна школа «FireBall» — професійна підготовка юних футболістів від 5 до 11 років. Вікові групи, турніри, галерея, історія клубу та контакти.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :focus-visible { outline: 3px solid #eab308; outline-offset: 3px; }
+        input, textarea { transition: border-color .2s ease, box-shadow .2s ease; }
+
+        :root {
+
+            --primary-50: #fefce8;
+
+            --primary-100: #fef08a;
+
+            --primary-600: #ca8a04;
+
+            --primary-700: #a16207;
+
+            --primary-800: #111111;
+
+            --accent: #facc15;
+
+            --accent-dark: #ca8a04;
+
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body { font-family: 'Inter', sans-serif; }
+
+        h1, h2, h3, .font-display { font-family: 'Montserrat', sans-serif; }
+
+        .hero-overlay { background: linear-gradient(135deg, rgba(0, 0, 0, 0.84) 0%, rgba(17, 17, 17, 0.72) 58%, rgba(202, 138, 4, 0.42) 100%); }
+
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+
+        .gallery-item { transition: transform 0.3s ease, opacity 0.3s ease; cursor: pointer; }
+
+        .gallery-item:hover { transform: scale(1.05); opacity: 0.85; }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+
+
+    <!-- ===== HEADER ===== -->
+
+    <header class="bg-white/95 backdrop-blur shadow-sm border-b-4 border-yellow-400 sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex items-center justify-between h-16">
+
+                <div class="flex items-center gap-3">
+
+                    <img src="images/logo.png" alt="FireBall" class="w-10 h-10 object-contain">
+
+                    <span class="font-display font-bold text-lg text-gray-950">Школа «FireBall»</span>
+
+                </div>
+
+                <nav class="hidden md:flex items-center gap-6" aria-label="Головна навігація">
+
+                    <ul id="nav-list" class="flex items-center gap-6 list-none"></ul>
+
+                </nav>
+
+                <button id="mobile-menu-toggle" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-gray-200 text-gray-900 hover:bg-yellow-50 hover:border-yellow-400 transition focus-visible:ring-2 focus-visible:ring-yellow-500" aria-label="Відкрити меню" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    <svg id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-4" aria-label="Мобільна навігація">
+                <ul id="mobile-nav-list" class="flex flex-col gap-1 list-none"></ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+
+        <!-- ===== HERO ===== -->
+
+        <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+
+            <img src="images/team.jpg" alt="Діти грають у футбол на стадіоні" class="absolute inset-0 w-full h-full object-cover" loading="eager">
+
+            <div class="absolute inset-0 hero-overlay"></div>
+
+            <div class="relative max-w-4xl mx-auto text-center px-4 py-20">
+
+                <p class="text-yellow-200 font-semibold tracking-widest uppercase text-sm mb-4">Запрошуємо у світ футболу</p>
+
+                <h1 class="text-white font-display font-800 text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">Дитяча футбольна школа<br>«FireBall»</h1>
+
+                <p class="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">Розвиваємо пристрасть до футболу у дітей від 4 до 11 років. Тренування, турніри, дружня атмосфера та професійні тренери.</p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+
+                    <a href="#groups" class="bg-white text-gray-950 font-semibold px-8 py-3 rounded-full hover:bg-yellow-50 transition" data-nav-link>Наші групи</a>
+
+                    <a href="#contacts" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-semibold px-8 py-3 rounded-full transition shadow-lg shadow-yellow-400/20" data-nav-link>Записатися</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== HISTORY / ABOUT ===== -->
+
+        <section id="history" class="py-20 bg-white">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <div>
+
+                        <p class="text-yellow-600 font-semibold tracking-widest uppercase text-sm mb-3">Наша історія</p>
+
+                        <h2 class="font-display font-700 text-3xl md:text-4xl font-bold text-gray-950 mb-6">Заснована у 2012 році з любов'ю до футболу</h2>
+
+                        <div id="history-text" class="space-y-4 text-gray-600 leading-relaxed"></div>
+
+                        <div id="stats-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8"></div>
+
+                    </div>
+
+                    <div class="relative">
+
+                        <img src="images/photo3.jpg" alt="Команда школи «М'яч»" class="rounded-2xl shadow-xl w-full object-cover" loading="lazy">
+
+                        <div class="absolute -bottom-4 -left-4 bg-yellow-400 text-white px-6 py-4 rounded-xl shadow-lg hidden sm:block">
+
+                            <p class="font-display font-bold text-2xl">14+</p>
+
+                            <p class="text-sm text-yellow-100">років досвіду</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== AGE GROUPS ===== -->
+
+        <section id="groups" class="py-20 bg-gradient-to-b from-yellow-50 to-white">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+
+                    <p class="text-yellow-600 font-semibold tracking-widest uppercase text-sm mb-3">Вікові групи</p>
+
+                    <h2 class="font-display font-700 text-3xl md:text-4xl font-bold text-gray-950 mb-4">Програми для кожного віку</h2>
+
+                    <p class="text-gray-500 max-w-2xl mx-auto">Ми створюємо умови, де кожна дитина може розвиватися та рости як футболіст.</p>
+
+                </div>
+
+                <div id="groups-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== TOURNAMENTS ===== -->
+
+        <section id="tournaments" class="py-20 bg-black">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+
+                    <p class="text-yellow-400 font-semibold tracking-widest uppercase text-sm mb-3">Турніри</p>
+
+                    <h2 class="font-display font-700 text-3xl md:text-4xl font-bold text-white mb-4">Найближчі змагання</h2>
+
+                    <p class="text-yellow-200 max-w-2xl mx-auto">Беремо участь у міських та всеукраїнських турнірах.</p>
+
+                </div>
+
+                <div id="tournament-list" class="max-w-3xl mx-auto space-y-4"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== GALLERY ===== -->
+
+        <section id="gallery" class="py-20 bg-white">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+
+                    <p class="text-yellow-600 font-semibold tracking-widest uppercase text-sm mb-3">Галерея</p>
+
+                    <h2 class="font-display font-700 text-3xl md:text-4xl font-bold text-gray-950 mb-4">Наші моменти</h2>
+
+                    <p class="text-gray-500 max-w-2xl mx-auto">Фотографії з тренувань, турнірів та змагань.</p>
+
+                </div>
+
+                <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== CONTACTS ===== -->
+
+        <section id="contacts" class="py-20 bg-gray-100">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+
+                    <p class="text-yellow-600 font-semibold tracking-widest uppercase text-sm mb-3">Контакти</p>
+
+                    <h2 class="font-display font-700 text-3xl md:text-4xl font-bold text-gray-950 mb-4">Зв'яжіться з нами</h2>
+
+                    <p class="text-gray-500 max-w-2xl mx-auto">Запишіть дитину на перше безкоштовне тренування!</p>
+
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+
+                    <div id="contact-cards" class="space-y-4"></div>
+
+                    <form class="bg-white rounded-2xl shadow-sm p-8" id="contact-form">
+
+                        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+
+                            <div>
+
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Ім'я дитини</label>
+
+                                <input type="text" id="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Олександр">
+
+                            </div>
+
+                            <div>
+
+                                <label for="age" class="block text-sm font-semibold text-gray-700 mb-1">Вік</label>
+
+                                <input type="number" id="age" min="4" max="17" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500" placeholder="9">
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1">Телефон</label>
+
+                            <input type="tel" id="phone" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500" placeholder="+380 (__) ___-__-__">
+
+                        </div>
+
+                        <div class="mb-6">
+
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-1">Повідомлення</label>
+
+                            <textarea id="message" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Розкажіть про вашу дитину..."></textarea>
+
+                        </div>
+
+                        <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-semibold px-6 py-3 rounded-xl transition">Надіслати заявку</button>
+
+                        <p id="form-success" class="hidden text-yellow-600 text-center mt-4 font-semibold">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer class="bg-black text-white py-12">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+
+                <div>
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <img src="images/logo.png" alt="FireBall" class="w-8 h-8 object-contain">
+
+                        <span class="font-display font-bold text-lg">Школа «FireBall»</span>
+
+                    </div>
+
+                    <p class="text-gray-300 text-sm leading-relaxed">Навчаємо дітей футболу з 2012 року. З нами — впевнений шлях до мрії.</p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold mb-3 text-yellow-400">Навігація</h3>
+
+                    <ul id="footer-nav-list" class="space-y-2"></ul>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold mb-3 text-yellow-400">Контакти</h3>
+
+                    <ul class="space-y-2 text-gray-300 text-sm">
+
+                        <li>м. Житомир</li>
+
+                        <li>+380 (XX) XXX-XX-XX</li>
+
+                        <li>fireball@com.ua</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-yellow-400 text-sm">
+
+                <p>© 2026 «FireBall». Created by | Kuzko Anatolii</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ===== LIGHTBOX (gallery) ===== -->
+
+    <div id="lightbox" class="fixed inset-0 bg-black/90 hidden z-50 items-center justify-center p-4" role="dialog" aria-label="Перегляд фото">
+
+        <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20 transition" aria-label="Закрити">×</button>
+
+        <img id="lightbox-img" src="" alt="Фото у великому розмірі" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl">
+
+    </div>
+
+
+
+<script>
+
+    // ===== DATA LAYER =====
+
+    const navItems = [
+
+        { label: "Історія", href: "#history" },
+
+        { label: "Групи", href: "#groups" },
+
+        { label: "Турніри", href: "#tournaments" },
+
+        { label: "Галерея", href: "#gallery" },
+
+        { label: "Контакти", href: "#contacts", highlight: true }
+
+    ];
+
+
+
+    const footerNavItems = [
+
+        { label: "Історія клубу", href: "#history" },
+
+        { label: "Вікові групи", href: "#groups" },
+
+        { label: "Турніри", href: "#tournaments" },
+
+        { label: "Галерея", href: "#gallery" },
+
+        { label: "Контакти", href: "#contacts" }
+
+    ];
+
+
+
+    const historyParagraphs = [
+
+        "Дитяча футбольна школа «FireBall» розпочала свою роботу у вересні 2012 року з однієї групи дітей 2005 року народження та одного тренера-ентузіаста.",
+
+        "За 14 років школа виросла до понад 200 учнів, які тренуються у вікових групах від U4 до U11. Наші команди регулярно беруть участь у міських та всеукраїнських турнірах.",
+
+        "Ми віримо, що саме дитячий футбол — це фундамент великого спортивного майбутнього. Тому. кожне тренування — це розвиток не лише фізичних навичок, а й характеру, дисципліни та командної роботи."
+
+    ];
+
+
+
+    const stats = [
+
+        { value: "200+", label: "учнів" },
+
+        { value: "14", label: "років досвіду" },
+
+        { value: "50+", label: "турнірів" },
+
+        { value: "15", label: "тренерів" }
+
+    ];
+
+
+
+    const groups = [
+
+        {
+
+            age: "8 років",
+
+            name: "U8 «Перші кроки»",
+
+            schedule: "Вт, Чт, Сб — 10:00",
+
+            color: "from-yellow-300 to-yellow-500",
+
+            description: "Знайомство з м'ячем, основи координації та перші ігри."
+
+        },
+
+        {
+
+            age: "9 років",
+
+            name: "U9 «Юні таланти»",
+
+            schedule: "Пн, Ср, Пт — 16:00",
+
+            color: "from-yellow-300 to-yellow-600",
+
+            description: "Техніка володіння м'ячем, основи тактики та командні взаємодії."
+
+        },
+
+        {
+
+            age: "10 років",
+
+            name: "U10 «Майбутні зірки»",
+
+            schedule: "Пн, Ср, Пт — 17:30",
+
+            color: "from-yellow-400 to-yellow-600",
+
+            description: "Тактична підготовка, фізична форма та участь у змаганнях."
+
+        },
+
+        {
+
+            age: "11 років",
+
+            name: "U11 «Еліта»",
+
+            schedule: "Щодня — 18:30",
+
+            color: "from-yellow-500 to-yellow-700",
+
+            description: "Інтенсивна підготовка, університетські програми та відбір до клубів."
+
+        }
+
+    ];
+
+
+
+    const tournaments = [
+
+        {
+
+            title: "ДЮФЛ Житомирської області U10",
+
+            date: "вересень 2026 - 2027",
+
+            place: "м. Житомир",
+
+            status: "Реєстрація Завершена"
+
+        },
+
+        {
+
+            title: "Всеукраїнський турнір «New Stars» U10",
+
+            date: "22–24 жовтня 2026",
+
+            place: "м. Вінниця",
+
+            status: "Збір команд"
+
+        },
+
+        {
+
+            title: "Всеукраїнський турнір «Leo CUP» U10",
+
+            date: "18-20 вересня 2026",
+
+            place: "м. Львів",
+
+            status: "Завершено"
+
+        }
+
+    ];
+
+
+
+    const galleryItems = [
+
+        { src: "images/photo1.jpg", alt: "Срібні призери м.Козин"},
+
+        { src: "images/photo2.jpg", alt: "Срібні призери Бердичів U11"},
+
+        { src: "images/photo3.jpg", alt: "Срібні призери Бородянка"},
+
+        { src: "images/photo4.jpg", alt: "Золото м.Коростень"},
+
+        { src: "images/photo5.jpg", alt: "Срібні призери Бердичів U10"},
+
+        { src: "images/photo6.jpg", alt: "Бронза-футзал-м.Хмельницьк"},
+
+        { src: "images/photo7.jpg", alt: "Золото Буковель"},
+
+        { src: "images/photo8.jpg", alt: "Бронза Васильків"}
+
+    ];
+
+
+
+    const contactCards = [
+
+        { icon: "fa-map-marker-alt", label: "Адреса", value: "м. :Житомир" },
+
+        { icon: "fa-phone-alt", label: "Телефон", value: "+380 (XX) XXX-XX-XX" },
+
+        { icon: "fa-envelope", label: "Email", value: "fireball@com.ua" },
+
+        { icon: "fa-clock", label: "Графік роботи", value: "Пн–Сб: 09:00–20:00, Нд: вихідний" }
+
+    ];
+
+
+
+    // ===== RENDER FUNCTIONS =====
+
+    function renderNav(items) {
+
+        return items.map(item => `
+
+            <li>
+
+                <a href="${item.href}" class="${item.highlight ? 'bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-full transition' : 'text-gray-700 hover:text-yellow-700 font-medium transition'}" data-nav-link>${item.label}</a>
+
+            </li>
+
+        `).join("");
+
+    }
+
+
+
+    function renderMobileNav(items) {
+        return items.map(item => `
+            <li>
+                <a href="${item.href}" class="${item.highlight ? 'block bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-semibold px-4 py-3 rounded-xl transition' : 'block text-gray-800 hover:bg-yellow-50 hover:text-yellow-700 font-medium px-4 py-3 rounded-xl transition'}" data-nav-link>${item.label}</a>
+            </li>
+        `).join("");
+    }
+
+    function renderFooterNav(items) {
+
+        return items.map(item => `
+
+            <li><a href="${item.href}" class="text-gray-300 hover:text-white transition text-sm" data-nav-link>${item.label}</a></li>
+
+        `).join("");
+
+    }
+
+
+
+    function renderHistory(paragraphs) {
+
+        return paragraphs.map(p => `<p>${p}</p>`).join("");
+
+    }
+
+
+
+    function renderStats(items) {
+
+        return items.map(item => `
+
+            <div class="text-center">
+
+                <p class="font-display font-bold text-3xl text-gray-950">${item.value}</p>
+
+                <p class="text-gray-500 text-sm mt-1">${item.label}</p>
+
+            </div>
+
+        `).join("");
+
+    }
+
+
+
+    function renderGroups(items) {
+
+        return items.map((group, i) => `
+
+            <article class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 card-hover flex flex-col">
+
+                <div class="w-full h-2 rounded-full bg-gradient-to-r ${group.color} mb-5"></div>
+
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">${group.age}</span>
+
+                <h3 class="font-display font-bold text-xl text-gray-950 mt-1 mb-3">${group.name}</h3>
+
+                <p class="text-gray-500 text-sm flex-1">${group.description}</p>
+
+                <div class="flex items-center gap-2 text-gray-400 text-sm mt-4">
+
+                    <i class="fas fa-calendar-alt"></i>
+
+                    <span>${group.schedule}</span>
+
+                </div>
+
+            </article>
+
+        `).join("");
+
+    }
+
+
+
+    function renderTournaments(items) {
+
+        return items.map((t, i) => `
+
+            <article class="bg-white/10 border border-yellow-400/40 rounded-2xl p-6 sm:flex items-center justify-between gap-6">
+
+                <div class="flex items-start gap-4">
+
+                    <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold flex-shrink-0">${i + 1}</div>
+
+                    <div>
+
+                        <h3 class="font-semibold text-white text-lg">${t.title}</h3>
+
+                        <div class="flex flex-wrap gap-4 mt-2 text-gray-300 text-sm">
+
+                            <span><i class="fas fa-calendar mr-1"></i>${t.date}</span>
+
+                            <span><i class="fas fa-map-marker-alt mr-1"></i>${t.place}</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <span class="mt-3 sm:mt-0 inline-block bg-yellow-400/20 text-yellow-400 text-xs font-semibold px-3 py-1 rounded-full shrink-0">${t.status}</span>
+
+            </article>
+
+        `).join("");
+
+    }
+
+
+
+    function renderGallery(items) {
+
+        return items.map(item => `
+
+            <figure class="gallery-item relative overflow-hidden rounded-xl shadow-sm" data-lightbox-trigger>
+
+                <img src="${item.src}" alt="${item.alt}" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+
+                <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 hover:opacity-100 transition">
+
+                    <span class="text-white text-sm font-medium">${item.alt}</span>
+
+                </figcaption>
+
+            </figure>
+
+        `).join("");
+
+    }
+
+
+
+    function renderContacts(items) {
+
+        return items.map(item => `
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex items-center gap-4">
+
+                <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-700 flex-shrink-0">
+
+                    <i class="fas ${item.icon}"></i>
+
+                </div>
+
+                <div>
+
+                    <p class="text-gray-400 text-sm">${item.label}</p>
+
+                    <p class="font-semibold text-gray-800">${item.value}</p>
+
+                </div>
+
+            </div>
+
+        `).join("");
+
+    }
+
+
+
+    // ===== MOUNT =====
+
+    document.getElementById("nav-list").innerHTML = renderNav(navItems);
+    document.getElementById("mobile-nav-list").innerHTML = renderMobileNav(navItems);
+
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenuIconOpen = document.getElementById("mobile-menu-icon-open");
+    const mobileMenuIconClose = document.getElementById("mobile-menu-icon-close");
+
+    function setMobileMenuOpen(isOpen) {
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileMenuToggle.setAttribute("aria-label", isOpen ? "Закрити меню" : "Відкрити меню");
+        mobileMenuIconOpen.classList.toggle("hidden", isOpen);
+        mobileMenuIconClose.classList.toggle("hidden", !isOpen);
+    }
+
+    mobileMenuToggle.addEventListener("click", function() {
+        setMobileMenuOpen(mobileMenuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    document.getElementById("mobile-nav-list").addEventListener("click", function(e) {
+        if (e.target.closest("[data-nav-link]")) setMobileMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") setMobileMenuOpen(false);
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth >= 768) setMobileMenuOpen(false);
+    });
+
+    document.getElementById("footer-nav-list").innerHTML = renderFooterNav(footerNavItems);
+
+    document.getElementById("history-text").innerHTML = renderHistory(historyParagraphs);
+
+    document.getElementById("stats-grid").innerHTML = renderStats(stats);
+
+    document.getElementById("groups-grid").innerHTML = renderGroups(groups);
+
+    document.getElementById("tournament-list").innerHTML = renderTournaments(tournaments);
+
+    document.getElementById("gallery-grid").innerHTML = renderGallery(galleryItems);
+
+    document.getElementById("contact-cards").innerHTML = renderContacts(contactCards);
+
+
+
+    // ===== EVENT DELEGATION =====
+
+    document.addEventListener("click", function(e) {
+
+        // Smooth scroll for navigation links
+
+        const link = e.target.closest("[data-nav-link]");
+
+        if (link) {
+
+            const href = link.getAttribute("href");
+
+            if (href && href.startsWith("#")) {
+
+                e.preventDefault();
+
+                const target = document.querySelector(href);
+
+                if (target) {
+
+                    target.scrollIntoView({ behavior: "smooth" });
+
+                }
+
+            }
+
+            return;
+
+        }
+
+
+
+        // Lightbox trigger
+
+        const galleryItem = e.target.closest("[data-lightbox-trigger]");
+
+        if (galleryItem) {
+
+            const img = galleryItem.querySelector("img");
+
+            const lightbox = document.getElementById("lightbox");
+
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            lightboxImg.src = img.src;
+
+            lightboxImg.alt = img.alt;
+
+            lightbox.classList.remove("hidden");
+
+            lightbox.classList.add("flex");
+
+            return;
+
+        }
+
+
+
+        // Lightbox close button
+
+        const closeBtn = e.target.closest("#lightbox-close");
+
+        if (closeBtn) {
+
+            const lightbox = document.getElementById("lightbox");
+
+            lightbox.classList.add("hidden");
+
+            lightbox.classList.remove("flex");
+
+            return;
+
+        }
+
+    });
+
+
+
+    // Close lightbox on backdrop click or Escape
+
+    document.getElementById("lightbox").addEventListener("click", function(e) {
+
+        if (e.target === this) {
+
+            this.classList.add("hidden");
+
+            this.classList.remove("flex");
+
+        }
+
+    });
+
+
+
+    document.addEventListener("keydown", function(e) {
+
+        if (e.key === "Escape") {
+
+            const lightbox = document.getElementById("lightbox");
+
+            if (!lightbox.classList.contains("hidden")) {
+
+                lightbox.classList.add("hidden");
+
+                lightbox.classList.remove("flex");
+
+            }
+
+        }
+
+    });
+
+
+
+    // ===== FORM HANDLER =====
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+
+        const age = document.getElementById("age").value;
+
+        const phone = document.getElementById("phone").value.trim();
+
+
+
+        if (!name || !age || !phone) {
+
+            alert("Будь ласка, заповніть ім'я, вік та телефон дитини.");
+
+            return;
+
+        }
+
+
+
+        const successMsg = document.getElementById("form-success");
+
+        successMsg.classList.remove("hidden");
+
+        this.reset();
+
+        setTimeout(() => successMsg.classList.add("hidden"), 5000);
+
+    });
+
+</script>
+
+</body>
+
+</html>
